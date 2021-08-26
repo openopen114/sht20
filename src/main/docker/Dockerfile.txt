@@ -1,0 +1,7 @@
+FROM dockerfile/java:oracle-java8
+
+VOLUME /tmp
+ADD sht20.jar /opt/sht20/
+EXPOSE 8080
+WORKDIR /opt/sht20/
+CMD ["java", "-Djava.security.egd=file:/dev/./urandom", "-Xms512m", "-Xmx1g", "-jar", "sht20.jar"]
