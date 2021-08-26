@@ -45,4 +45,18 @@ public class SHT20MST01Service {
 
     }
 
+
+    /*
+     *
+     * 抓最新的一筆資料 selectLastOne
+     *
+     * */
+    public SHT20MST01 selectLastOne(){
+        return sht20mst01Mapper.selectLastOne();
+    }
+
+
+
+
+
 }

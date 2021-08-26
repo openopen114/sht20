@@ -9,4 +9,6 @@ public interface SHT20MST01Mapper {
     int insert(SHT20MST01 record);
 
     int insertSelective(SHT20MST01 record);
+
+    SHT20MST01 selectLastOne();
 }

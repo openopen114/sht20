@@ -31,8 +31,11 @@ public class App {
   }
 
 
-  //hello API 環境
-  @RequestMapping(value = "/dd")
+  //Druid Info 
+  @RequestMapping(
+          value = "/druidInfo",
+          method = RequestMethod.GET,
+          produces = {"application/json"})
   String DruidConfig() {
 
 

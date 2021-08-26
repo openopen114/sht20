@@ -114,12 +114,7 @@
 
         <!-- 3. Properties Filter -->
         <filters>
-            <filter>src/main/filters/${api.env}/DB.properties</filter>
             <filter>src/main/filters/${api.env}/application.yml</filter>
-
-
-
-
         </filters>
 
 
@@ -269,7 +264,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.2.6</version>
+            <version>1.2.3</version>
         </dependency>
 
 

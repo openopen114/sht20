@@ -51,4 +51,22 @@
       </if>
     </trim>
   </insert>
+
+  <!-- 抓最新的一筆資料 -->
+
+  <select id="selectLastOne"   resultMap="BaseResultMap">
+
+    SELECT
+    *
+    FROM
+      SHT20MST01
+    WHERE
+      DATE_CREATE = (
+        SELECT
+          MAX(DATE_CREATE) AS MAX_DATE_CREATED
+        FROM
+         SHT20MST01
+      )
+    LIMIT 1
+  </select>
 </mapper>

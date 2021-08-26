@@ -12,10 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.util.List;
@@ -55,6 +52,24 @@ public class SHT20MST01Controller {
         obj.addProperty("RESULT", "OK");
 
         return new Gson().toJson(obj);
+    }
+
+
+
+
+    /*
+     *
+     * 抓最新的一筆資料
+     *
+     * */
+    //http://localhost:8080/api/lastone
+    @RequestMapping(
+            value = "/lastone",
+            method = RequestMethod.GET,
+            produces = {"application/json"})
+    public SHT20MST01 selectLastOne() {
+
+        return sht20mst01Service.selectLastOne();
     }
 
 
