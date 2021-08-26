@@ -19,26 +19,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class App {
 
-  //API 環境
+  // API 環境
   @Value("${APIENV}")
   private   String APIENV;
 
 
-  //hello API 環境
+  // hello API 環境
   @RequestMapping(value = "/")
   String hello() {
     return "Hello World!" + APIENV;
   }
 
 
-  //Druid Info 
+  // Druid Info
   @RequestMapping(
           value = "/druidInfo",
           method = RequestMethod.GET,
           produces = {"application/json"})
-  String DruidConfig() {
-
-
+  String DruidConfig() { 
     return new DruidConfig().getConnectInfo();
   }
 
