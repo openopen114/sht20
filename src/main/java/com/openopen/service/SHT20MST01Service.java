@@ -36,8 +36,8 @@ public class SHT20MST01Service {
     public void insertSht20mst01ByList(List<SHT20MST01> _datalist) throws ParseException {
 
         for(SHT20MST01 model : _datalist){
-            //塞系統時間
-            model.setDateCreate(moment.getSysdate());
+            //塞系統時間 
+            model.setDateUpdate(moment.getSysdate());
 
             //插入數據
             sht20mst01Mapper.insertSelective(model);

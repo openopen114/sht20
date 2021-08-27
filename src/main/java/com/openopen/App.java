@@ -14,6 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Timestamp;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.openopen"})
 @RestController
@@ -36,7 +40,7 @@ public class App {
           value = "/druidInfo",
           method = RequestMethod.GET,
           produces = {"application/json"})
-  String DruidConfig() { 
+  String DruidConfig() {
     return new DruidConfig().getConnectInfo();
   }
 
